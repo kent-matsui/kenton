@@ -1,0 +1,41 @@
+runtime: nodejs10
+
+default_expiration: "0s"
+
+handlers:
+  # file with extensions (e.g. .html)
+  - url: /(.*\..*)
+    static_files: public/\1
+    upload: public/(.*)
+    secure: always
+
+  - url: /sw.js
+    static_files: public/sw.js
+    upload: public/sw.js
+    secure: always
+
+  - url: /static
+    static_dir: public/static
+    secure: always
+    expiration: "600s"
+
+  - url: /(.*\.(js|css))$
+    static_files: public/\1
+    upload: public/.*\.(js|css)$
+    secure: always
+    expiration: "600s"
+
+  - url: /(.*)/
+    static_files: public/\1/index.html
+    upload: public/(.*)/index.html
+    secure: always
+
+  - url: /
+    static_files: public/index.html
+    upload: public/index.html
+    secure: always
+
+  - url: /(.*)
+    static_files: public/\1/index.html
+    upload: public/(.*)/index.html
+    secure: always
