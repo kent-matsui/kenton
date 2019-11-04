@@ -1,7 +1,0 @@
-name: deply
-on:
-  push:
-    branches:
-    - master
-
-    - development
