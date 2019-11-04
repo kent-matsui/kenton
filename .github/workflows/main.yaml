@@ -15,7 +15,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-        run: npm install && npm install -g gatsby-cli && gatsby build
+      - name: install_dependencies_and_build
+        run: |
+          npm install
+          npm install -g gatsby-cli
+          gatsby build
       - name: setup_gcloud
         uses: actions-hub/gcloud@master
         env:
