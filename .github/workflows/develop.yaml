@@ -1,0 +1,29 @@
+name: deploy to app engine
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: setup_nodejs
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: install_dependencies_and_build
+        run: |
+          npm install
+          npm install -g gatsby-cli
+          gatsby build
+      - name: deploy_to_app_engine
+        uses: actions-hub/gcloud@master
+        env:
+            PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+            APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: app deploy app.yaml
