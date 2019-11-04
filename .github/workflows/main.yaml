@@ -8,16 +8,18 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@master
-      - uses: actions-hub/gcloud@master
-      - uses: actions/setup-node@v1
+      - name: checkout
+        uses: actions/checkout@master
+      - name: setup_nodejs
+        uses: actions/setup-node@v1
         with:
           node-version: '10.x'
-      - run: npm install && npm install -g gatsby-cli && gatsby build
-      env:
-          PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
-          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        run: npm install && npm install -g gatsby-cli && gatsby build
+      - name: setup_gcloud
+        uses: actions-hub/gcloud@master
+        env:
+            PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+            APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
         with:
           args: app deploy app.yaml
