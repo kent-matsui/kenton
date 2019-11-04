@@ -1,8 +1,8 @@
-name: deploy to app engine
+name: deploy to app engine development
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   deploy:
@@ -26,4 +26,4 @@ jobs:
             PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
             APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
         with:
-          args: app deploy app.yaml
+          args: app deploy app.yaml --no-promote
