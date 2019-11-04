@@ -20,7 +20,7 @@ jobs:
           npm install
           npm install -g gatsby-cli
           gatsby build
-      - name: setup_gcloud
+      - name: deploy_to_app_engine
         uses: actions-hub/gcloud@master
         env:
             PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
