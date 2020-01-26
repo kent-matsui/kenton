@@ -248,8 +248,8 @@ progressImageCircle.style.strokeDasharray = circleLength + ' ' + circleLength
 progressImageCircle.style.strokeDashoffset = circleLength
 
 function progressUpdate() {
-  const currentPosition = window.pageYOffset;
-  const pageHeight = wrapper.getBoundingClientRect().height - document.documentElement.clientHeight
+  const currentPosition = window.pageYOffset
+  const pageHeight = wrapper.getBoundingClientRect().height - window.innerHeight
   progressImageCircle.style.strokeDashoffset = circleLength - (currentPosition * circleLength / pageHeight)
 }
 
