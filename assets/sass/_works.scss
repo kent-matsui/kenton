@@ -1,0 +1,304 @@
+/*!------------------------------------------------------------------
+Works
+-------------------------------------------------------------------*/
+
+.works {
+  padding: 20vh 0;
+  @include breakpoint-up() {
+    padding: 25vh 0 18.74902vh;
+  }
+}
+
+
+/*!------------------------------------------------------------------
+Archive
+-------------------------------------------------------------------*/
+
+.works-archive {
+  padding: 0 6.25098vw;
+  @include breakpoint-up() {
+    padding: 0 3.124719vw;
+  }
+
+  &__heading {
+    font-size: 5.625vw;
+    line-height: 7.59375vw;
+    color: $primary-color;
+    @include breakpoint-up(sm) {
+      font-size: 3.75vw;
+      line-height: 5.0625vw;
+    }
+    @include breakpoint-up() {
+      font-size: 3.125vw;
+      line-height: 4.21875vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    @include breakpoint-up(sm) {
+      margin: 0 -1.2%;
+    }
+    @include breakpoint-up(lg) {
+      margin: 0 -.8%;
+    }
+    @include breakpoint-up(xl) {
+      margin: 0 -.5%;
+    }
+  }
+
+  &__list-item {
+    width: 100%;
+    padding: 0 0 1.2em;
+    @include breakpoint-up(sm) {
+      width: 50%;
+      padding: 0 1.2% 1.2em;
+    }
+    @include breakpoint-up(lg) {
+      width: 33.333333%;
+      padding: 0 .8% 1.2em;
+    }
+    @include breakpoint-up(xl) {
+      width: 25%;
+      padding: 0 .5% 1.2em;
+    }
+  }
+
+  &__item-link {
+    display: block;
+  }
+
+  &__item-link figure {
+    @include position(relative);
+    margin: 0 0 .5em;
+    padding-top: 56.25%;
+    overflow: hidden;
+  }
+
+  &__item-image {
+    @include position(absolute, $top: 50%, $left: 50%);
+    transform: translate(-50%, -50%);
+    background: center / cover no-repeat;
+    height: 100%;
+    width: 100%;
+    transition: filter .64s;
+
+    &:hover {
+      filter: brightness(92%);
+    }
+  }
+
+  &__item-link figcaption {
+    font-size: 3.125vw;
+    letter-spacing: .05em;
+    line-height: 5.3125vw;
+    text-transform: uppercase;
+    color: $primary-color;
+    @include breakpoint-up(sm) {
+      font-size: 2.083333vw;
+      line-height: 3.541667vw;
+    }
+    @include breakpoint-up() {
+      font-size: 1.5625vw;
+      line-height: 2.65625vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+  }
+
+  &__pagination-item.is-prev {
+    margin-right: .5em;
+  }
+
+  &__pagination-item.is-next {
+    margin-left: .5em;
+  }
+
+  &__pagination-link {
+    font-size: 3.125vw;
+    line-height: 5.3125vw;
+    color: $secondary-color;
+    padding: 0 .2em;
+    @include breakpoint-up(sm) {
+      font-size: 2.083333vw;
+      line-height: 3.541667vw;
+    }
+    @include breakpoint-up() {
+      font-size: 1.5625vw;
+      line-height: 2.65625vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__pagination-item.is-active &__pagination-link {
+    color: $primary-color;
+  }
+}
+
+
+/*!------------------------------------------------------------------
+Single
+-------------------------------------------------------------------*/
+
+.works-single {
+  padding: 0 6.25098vw;
+  @include breakpoint-up() {
+    padding: 0 3.124719vw;
+  }
+
+  &__info {
+    margin-bottom: 5vh;
+    @include breakpoint-up() {
+      margin-bottom: 8.333333vh;
+    }
+  }
+
+  &__info-heading {
+    font-size: 5.625vw;
+    line-height: 7.59375vw;
+    text-transform: uppercase;
+    @include breakpoint-up(sm) {
+      font-size: 3.75vw;
+      line-height: 5.0625vw;
+    }
+    @include breakpoint-up() {
+      font-size: 3.125vw;
+      line-height: 4.21875vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  &__info-subheading {
+    font-size: 3.125vw;
+    line-height: 5.3125vw;
+    color: $secondary-color;
+    @include breakpoint-up(sm) {
+      font-size: 2.083333vw;
+      line-height: 3.541667vw;
+    }
+    @include breakpoint-up() {
+      font-size: 1.5625vw;
+      line-height: 2.65625vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 5vh;
+    @include breakpoint-up() {
+      margin-bottom: 8.333333vh;
+    }
+  }
+
+  &__content p {
+    @include breakpoint-up(lg) {
+      max-width: 50%;
+    }
+  }
+
+  &__content p:last-of-type {
+    margin: 0 0 2.4em;
+  }
+
+  &__content figure {
+    margin: 0 0 1em;
+  }
+
+  &__content figure img {
+    vertical-align: bottom;
+  }
+
+  &__content a {
+    font-size: 3.125vw;
+    line-height: 5.3125vw;
+    color: $secondary-color;
+    margin: 0 0 2.4em;
+    @include breakpoint-up(sm) {
+      font-size: 2.083333vw;
+      line-height: 3.541667vw;
+    }
+    @include breakpoint-up() {
+      font-size: 1.5625vw;
+      line-height: 2.65625vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    &::after {
+      content: '>';
+      margin-left: 4px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__footer-link {
+    @include position(relative);
+    font-size: 3.125vw;
+    line-height: 5.3125vw;
+    text-transform: uppercase;
+    color: $secondary-color;
+    max-width: 50%;
+    padding: 0 1em;
+    @include breakpoint-up(sm) {
+      font-size: 2.083333vw;
+      line-height: 3.541667vw;
+    }
+    @include breakpoint-up() {
+      font-size: 1.5625vw;
+      line-height: 2.65625vw;
+    }
+    @include breakpoint-up(lg) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__footer-link.is-prev {
+    margin-right: auto;
+
+    &::before {
+      @include position(absolute, $top: 0, $left: 0);
+      content: '<';
+      margin-right: .2em;
+    }
+  }
+
+  &__footer-link.is-next {
+    margin-left: auto;
+
+    &::after {
+      @include position(absolute, $top: 0, $right: 0);
+      content: '>';
+      margin-left: .2em;
+    }
+  }
+}

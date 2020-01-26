@@ -1,0 +1,137 @@
+/*!------------------------------------------------------------------
+Base
+-------------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'Vitru';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/Vitru-Light.woff2") format("woff2");
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Vitru';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Vitru-Regular.woff2") format("woff2");
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'Vitru';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Vitru-Medium.woff2") format("woff2");
+  text-rendering: optimizeLegibility;
+}
+
+*, input, textarea, :before, :after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: transparent;
+  color: $tertiary-color;
+}
+
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+html, body {
+  font-family: "Vitru", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 16px;
+  letter-spacing: .04em;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  hyphens: auto;
+  background-color: $primary-color-inverse;
+  color: $primary-color;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsSAAALEgHS3X78AAAAf0lEQVQokZWS0QmAMAwFz04gzQK6gaM4ik6ioziKG+gCATeoRKL4IdLeZ/sOEl6qlBI3ItIAPVD70wEsqrrfmUcQkQGY+GZU1dl+QkbYmDxDFWO0Mbaf8Js2+My59OG1YA6dCU2BsJuwFghH+dJeypgRti6ukfBS/qSnuLLTAE5LITKHnPBAcAAAAABJRU5ErkJggg==') 6 6, pointer;
+  cursor: -webkit-image-set(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsSAAALEgHS3X78AAAAf0lEQVQokZWS0QmAMAwFz04gzQK6gaM4ik6ioziKG+gCATeoRKL4IdLeZ/sOEl6qlBI3ItIAPVD70wEsqrrfmUcQkQGY+GZU1dl+QkbYmDxDFWO0Mbaf8Js2+My59OG1YA6dCU2BsJuwFghH+dJeypgRti6ukfBS/qSnuLLTAE5LITKHnPBAcAAAAABJRU5ErkJggg==') 1x, url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAABGklEQVRIid2WwXGEMAxFXzJ7z0EFbEogFYQSsh1QQkrZEugg20HYDighFKADFZDxjszYxMuEYF/yb2D7fySkLz9M00RJHNa4RaQC3oEaOC6WB6ADWlXt7nEkIxCRZ3cQeP1lcFegUdWv5cJjgvwN6DeQY3t7OxshisA2fGwgTuGkqhf/fhawtLgvf9opMAKVT1eYojYDOcbR+odbBCLiquQzA3mIF1XtfQRNZnKsvOcU1QUE6lBg2UQ5cCTVB7nxfwSGAtxDKHDXDXegCwXOBQTaWcB1nFluLlz9jAirqDGj2osxdIZZwNwvh2VEgyfqA/Px0x8jGZez4IdAIFJt/Cdur5sBEbnD6q3CbNylbW3on61Ikih7bQG+ARz8aTdYFukqAAAAAElFTkSuQmCC') 2x) 6 6, pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0 0 .833333em;
+  padding: 0;
+}
+
+p {
+  font-size: 3.125vw;
+  line-height: 4.6875vw;
+  margin: 0 0 1em;
+  padding: 0;
+  @include breakpoint-up(sm) {
+    font-size: 2.083333vw;
+    line-height: 3.125vw;
+  }
+  @include breakpoint-up() {
+    font-size: 1.5625vw;
+    line-height: 2.34375vw;
+  }
+  @include breakpoint-up(lg) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+img {
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
+  max-width: 100%;
+}
+
+figcaption, figure, main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul, li, dl, dt, dd {
+	list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAA8ElEQVRIid2WrRKCQBRGj4xjwgAmSCab72DyoU28A41kgiQESRQcx7u67ACi7Bo8lZnv7M/de1m0bYtLlqPZZbAB9kAM+MbXGsiBjLDKhyL6d1AGa+AARBM3VwAJYXV9LyiDrYSvJoYrGpGchwWP8OOHwSYnXeJp4epY5nKQLEPw3bH0sdIX6snq4w8udAqRVOBzBzuL4Yq9LogdCGJdYD4iG/gYl+yE/xHUDrJrXTDYDWeQ64LUgSB7CcLqIi3XFoWaEXoVJdJy59JIFl3BY1gkFgSdwfPjgfOSOByZXdG9Yd077djQT6VIenH72wLcAIC5VhMDGsu3AAAAAElFTkSuQmCC') 12 12, pointer;
+  cursor: -webkit-image-set(url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsSAAALEgHS3X78AAAA8ElEQVRIid2WrRKCQBRGj4xjwgAmSCab72DyoU28A41kgiQESRQcx7u67ACi7Bo8lZnv7M/de1m0bYtLlqPZZbAB9kAM+MbXGsiBjLDKhyL6d1AGa+AARBM3VwAJYXV9LyiDrYSvJoYrGpGchwWP8OOHwSYnXeJp4epY5nKQLEPw3bH0sdIX6snq4w8udAqRVOBzBzuL4Yq9LogdCGJdYD4iG/gYl+yE/xHUDrJrXTDYDWeQ64LUgSB7CcLqIi3XFoWaEXoVJdJy59JIFl3BY1gkFgSdwfPjgfOSOByZXdG9Yd077djQT6VIenH72wLcAIC5VhMDGsu3AAAAAElFTkSuQmCC') 1x, url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB/klEQVRoge2aO3LCMBRFbzIZKhrbNFClCg1sgIoNsFo2QJUNQEOXChqwGyoaMrY+FrLkj9DoM8OZoQLDPZZsye/x8Xg8EDOfUacH8GXlW/IkAzADMAUwATDWfPIG4ALgDOCEtLi++tPmUyhPRgCWAOYtgbsohY4A9kiLuxuBOnj5GhkGl7lXEgYiwwTy5BvA2mJwmTL8Dmnx1/eA/gJ5Ugb/sZOzkwPS4rfPB7sFyJTZAMgcBBcpL/Bt15Rqv436Cw/6mxuaQUvXOuArPCOjGbToBcic9xmekSFPVro31QLkbuPqgu3DgmZq0BQgc24dUHjGWnU9qEbA5gJlE7aAtgjUq2yoLOVRkEcg1LPPGNG9F0cWmCsPC4unGVILkC2x6a7SJWOaVRIg+/lYmKkEphEJ8KyiwMRPFiN4VlEghvnP4Fmjf6h/C/jmLeAbUeAWUW6eVRS4+MliBM8qCpzjyF7Bs4oCJz9ZjOBZawFSaI3hOriJRWH5LrR3n2cwR/EAWeBI65OhcpdP8rMAKeOFPAqN6rVqIdsHOgrKk9sUIIY7V6kGsFMVetVbCVKfP4STvSq3K3sG+r0Qqc+/3MOywLWtV9C1mdt6lrjSDFraBcic8yXRq8ExpMW0qqrEbrDYYnqWiLjJx4i6zSpCROZUJKJGt4oo/2oQCHE/1AP4B8sOqTMd8eroAAAAAElFTkSuQmCC') 2x) 12 12, pointer;
+}
+
+a, button, select {
+  cursor: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+button, input, select, textarea {
+  font-family: "Vitru", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  appearance: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+}

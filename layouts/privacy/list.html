@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<!-- Privacy policy-->
+<div data-barba="container" data-barba-namespace="page">
+  <main class="page">
+
+    <section class="page-container">
+      <div class="page-container__left">
+        <h1 class="page-container__left-heading">{{.Title }}</h1>
+      </div>
+
+      <div class="page-container__right">
+        <h2 class="page-container__right-heading">Handling of personal information</h2>
+        {{ .Content }}
+      </div>
+    </section>
+
+    <section class="page-container">
+      <div class="page-container__right">
+        <h3 class="page-container__right-subheading">1. Considering the acquisition of personal information</h3>
+        <p class="page-container__right-text">This website will collect personal information only by appropriate means through no deception or in an otherwise illegal manner.</p>
+
+        <h3 class="page-container__right-subheading">2. Considering the usage of personal information</h3>
+        <p class="page-container__right-text">This website will only use personal information when necessary to achieve its purposes, such as answering estimate requests and sending documents, etc. When we use personal information for purposes other than the specified, we will obtain prior consent from its original holder.</p>
+
+        <h3 class="page-container__right-subheading">3. Considering the safety management of personal information</h3>
+        <p class="page-container__right-text">This website will maintain necessary and appropriate safeguards to protect and secure personal information from disclosure, loss, and damage.</p>
+
+        <h3 class="page-container__right-subheading">4. Considering the sharing of personal information</h3>
+        <p class="page-container__right-text">When this site entrusts a third party to handle part or all of the personal information, we will examine the third party strictly, and supervise it necessarily and appropriately to keep personal information confidential.</p>
+
+        <h3 class="page-container__right-subheading">5. Disclosure and provision of information to third parties</h3>
+        <p class="page-container__right-text">Except as stipulated by the Protection of Personal Information Act and other laws, this site will not disclose and  provide third parties with personal information without obtaining prior consent from its original holder.</p>
+
+        <h3 class="page-container__right-subheading">6. Considering disclosure and correction of personal information</h3>
+        <p class="page-container__right-text">This website provides the personal information promptly when requested by its original holder of the information. In that case, we will not provide the personal information without the identification confirmation of its original holder. If there are any mistakes about the personal information and its original holder requests to correct, add or delete it, we will respond those requests immediately after investigation.　In case of that, we will not respond those requests without the identification confirmation of its original holder. If you have any request or inquiry about our handling of personal information above, please contact us at the following.</p>
+
+        <h3 class="page-container__right-subheading">7. Revision of this policy</h3>
+        <p class="page-container__right-text">The contents of this policy may be revised. Revision of this policy shall become effective when posted on this website unless otherwise determined by the website.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+<!-- /Privacy policy -->
+
+{{ end }}

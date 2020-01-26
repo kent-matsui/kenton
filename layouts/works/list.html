@@ -1,0 +1,96 @@
+{{ define "main" }}
+
+<!-- Works -->
+<div data-barba="container" data-barba-namespace="works">
+  <main class="works">
+
+    <section class="works-archive">
+      <h1 class="works-archive__heading">Works</h1>
+
+      <ul class="works-archive__list">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "works") }}
+        {{ range $paginator.Pages }}
+        <li class="works-archive__list-item">
+          <a class="works-archive__item-link" href="{{.Permalink}}">
+            <figure>
+              <div class="works-archive__item-image" style="background-image: url({{.Params.Image | absURL }});"></div>
+            </figure>
+            <figcaption>{{.Title}}</figcaption>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      {{"<!-- pagination -->" | safeHTML }}
+      {{ $paginator := .Paginator }}
+      <!-- Number of links either side of the current page. -->
+      {{ $adjacent_links := 2 }}
+      <!-- $max_links = ($adjacent_links * 2) + 1 -->
+      {{ $max_links := (add (mul $adjacent_links 2) 1) }}
+      <!-- $lower_limit = $adjacent_links + 1 -->
+      {{ $lower_limit := (add $adjacent_links 1) }}
+      <!-- $upper_limit = $paginator.TotalPages - $adjacent_links -->
+      {{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}
+      <!-- If there's more than one page. -->
+      {{ if gt $paginator.TotalPages 1 }}
+      <ul class="works-archive__pagination">
+        <!-- Previous page. -->
+        {{ if $paginator.HasPrev }}
+        <li class="works-archive__pagination-item is-prev">
+          <a href="{{ $paginator.Prev.URL }}" class="works-archive__pagination-link">&lt;</a>
+        </li>
+        {{ end }}
+        <!-- Page numbers. -->
+        {{ range $paginator.Pagers }}
+        {{ $.Scratch.Set "page_number_flag" false }}
+        <!-- Advanced page numbers. -->
+        {{ if gt $paginator.TotalPages $max_links }}
+        <!-- Lower limit pages. -->
+        <!-- If the user is on a page which is in the lower limit.  -->
+        {{ if le $paginator.PageNumber $lower_limit }}
+        <!-- If the current loop page is less than max_links. -->
+        {{ if le .PageNumber $max_links }}
+        {{ $.Scratch.Set "page_number_flag" true }}
+        {{ end }}
+        <!-- Upper limit pages. -->
+        <!-- If the user is on a page which is in the upper limit. -->
+        {{ else if ge $paginator.PageNumber $upper_limit }}
+        <!-- If the current loop page is greater than total pages minus $max_links -->
+        {{ if gt .PageNumber (sub $paginator.TotalPages $max_links) }}
+        {{ $.Scratch.Set "page_number_flag" true }}
+        {{ end }}
+        <!-- Middle pages. -->
+        {{ else }}
+        {{ if and ( ge .PageNumber (sub $paginator.PageNumber $adjacent_links) ) ( le .PageNumber (add $paginator.PageNumber $adjacent_links) ) }}
+        {{ $.Scratch.Set "page_number_flag" true }}
+        {{ end }}
+        {{ end }}
+        <!-- Simple page numbers. -->
+        {{ else }}
+        {{ $.Scratch.Set "page_number_flag" true }}
+        {{ end }}
+        <!-- Output page numbers. -->
+        {{ if eq ($.Scratch.Get "page_number_flag") true }}
+        <li class="works-archive__pagination-item{{ if eq . $paginator }} works-archive__pagination-item is-active {{ end }}">
+          <a href="{{ .URL }}" class="works-archive__pagination-link">
+            {{ .PageNumber }}
+          </a>
+        </li>
+        {{ end }}
+        {{ end }}
+        <!-- Next page. -->
+        {{ if $paginator.HasNext }}
+        <li class="works-archive__pagination-item is-next">
+          <a href="{{ $paginator.Next.URL }}" class="works-archive__pagination-link">&gt;</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{"<!-- /pagination -->" | safeHTML }}
+    </section>
+
+  </main>
+</div>
+<!-- /Works -->
+
+{{ end }}

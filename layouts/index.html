@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<!-- Top -->
+<div data-barba="container" data-barba-namespace="top">
+  <main class="top">
+
+    <section class="top-intro">
+      <h1 class="top-intro__heading">Artwork of KENT MATSUI</h1>
+      <p class="top-intro__text">How seriously I take beauty.<br>All my works are part of the process of exploring beauty. The beauty of which I think - and my lifelong theme - is out of my league. I'm exploring it through websites commissioned in the course of my career as a UI/UX designer and personal artistic achievements. </p>
+      <a class="link" href="{{ .Site.BaseURL }}about">About</a>
+    </section>
+
+    <section class="swiper-container">
+      <ul class="swiper-wrapper">
+        {{ range first 6 (where .Site.RegularPages "Type" "works")}}
+        <li class="swiper-slide">
+          <a class="swiper-slide-link" href="{{.Permalink}}">
+            <figure>
+              <div class="swiper-slide-image" style="background-image: url({{.Params.Image | absURL }});"></div>
+            </figure>
+            <figcaption>
+              <span class="swiper-slide-title">{{.Title}}</span>
+              <span>View</span>
+            </figcaption>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <button class="swiper-prev"></button>
+      <button class="swiper-next"></button>
+
+      <div class="swiper-footer">
+        <a class="link" href="{{ .Site.BaseURL }}works">Works</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+<!-- /Top -->
+
+{{ end }}

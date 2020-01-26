@@ -1,0 +1,58 @@
+baseURL = "https://kenton.app/"
+languageCode = "en-us"
+title = "KENT MATSUI"
+summaryLength = "10"
+paginate = 12
+
+
+[outputs]
+  home = ["HTML", "AMP", "RSS", "JSON"]
+  page = ["HTML"]
+
+
+# navigation
+[menu]
+
+  [[menu.main]]
+  name = "Works"
+  URL = "works"
+  weight = 1
+
+  [[menu.main]]
+  name = "About"
+  URL = "about"
+  weight = 2
+
+
+[params]
+home = "Top"
+# Meta data
+description = "Artwork site by Kent Matsui. All my works are part of the process of exploring beauty, and it's always out of my league."
+# about author
+author = "KENT MATSUI"
+# Google Tag Manager
+googleTagManagerID = "GTM-PJP4CMH"
+# copyright
+copyright = "©Kent Matsui"
+
+  # footer
+  [params.footer]
+
+    [[params.footer.social]]
+    name = "Behance"
+    URL = "https://www.behance.net/kent_matsui_"
+    weight = 1
+
+    [[params.footer.social]]
+    name = "Instagram"
+    URL = "https://www.instagram.com/kent_matsui_"
+    weight = 2
+
+    [[params.footer.social]]
+    name = "Twitter"
+    URL = "https://twitter.com/kent_matsui_"
+    weight = 3
+
+    [[params.footer.privacy]]
+    name = "Privacy policy"
+    URL = "privacy"

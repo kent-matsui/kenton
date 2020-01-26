@@ -1,5 +1,12 @@
+archetypes/
+assets/
+content/
+layouts/
 node_modules/
-src/
-.cache/
+public/css/style.css.map
+resources/
+static/
+config.toml
 package.json
-yarn.lock
+package-lock.json
+webpack.config.js

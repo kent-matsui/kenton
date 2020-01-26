@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+<!-- About -->
+<div data-barba="container" data-barba-namespace="page">
+  <main class="page">
+
+    <section class="page-container">
+      <div class="page-container__left">
+        <h1 class="page-container__left-heading">{{.Title }}</h1>
+      </div>
+
+      <div class="page-container__right">
+        {{ .Content }}
+        <a class="link" href="{{ .Site.BaseURL }}works">Works</a>
+      </div>
+    </section>
+
+    <section class="page-container">
+      <div class="page-container__right">
+        <h2 class="page-container__right-heading">Data</h2>
+        <div class="page-container__right-text">Artist, Designer, Engineer</div>
+        <dl class="page-container__right-list">
+          <dt>Country</dt>
+          <dd>Japan</dd>
+          <dt>Moon</dt>
+          <dd>Area J-5, Quadrant Bravo Trot, Lot Number 183/1631-1632</dd>
+          <dt>Emphasis</dt>
+          <dd>Art, Trend site</dd>
+          <dt>Favorite color</dt>
+          <dd>#FFF, #121212, #FFED10</dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+</div>
+<!-- /About -->
+
+{{ end }}

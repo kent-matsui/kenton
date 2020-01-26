@@ -1,0 +1,39 @@
+<!-- Footer -->
+<footer class="footer">
+  <ul class="footer__nav">
+    {{ range .Site.Params.footer.social }}
+    <li class="footer__nav-item">
+      <a class="footer__nav-link" href="{{ .URL }}" target="_blank">{{ .name }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  <ul class="footer__legal">
+    {{ range .Site.Params.footer.privacy }}
+    <li class="footer__legal-item">
+      <a class="footer__legal-link" href="{{ .URL | absURL }}">{{ .name }}</a>
+    </li>
+    {{ end }}
+    <li class="footer__legal-item footer__copy">{{ .Site.Params.copyright }}</li>
+  </ul>
+</footer>
+<!-- /Footer -->
+
+</div>
+
+<!-- Progress -->
+<div class="progress">
+  <svg class="progress__image" viewBox="0 0 48 48">
+    <path class="progress__image-bg" d="M24,2A22,22,0,1,1,2,24,22,22,0,0,1,24,2"/>
+    <path class="progress__image-circle" d="M24,2A22,22,0,1,1,2,24,22,22,0,0,1,24,2"/>
+  </svg>
+</div>
+<!-- /Progress -->
+
+{{ "<!-- Main Script -->" | safeHTML }}
+<script src="{{ `js/script.js` | absURL }}"></script>
+{{ "<!-- Google Tag Manager -->" | safeHTML }}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManagerID }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->

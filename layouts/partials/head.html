@@ -1,0 +1,37 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end }}</title>
+
+  {{ "<!-- mobile responsive meta -->" | safeHTML }}
+  <meta content="{{ `images/icon_96.png` | absURL }}" name="msapplication-TileImage">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Title }} | {{ .Site.Title }}{{- end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{ .Params.image }}{{ else }}{{ `images/ogp.jpg` | absURL }}{{ end }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@kent_matsui_">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ .Site.Params.googleTagManagerID }}');</script>
+  <!-- End Google Tag Manager -->
+
+  {{ "<!-- Main Stylesheet -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ `css/style.css` | absURL }}" media="screen">
+
+  {{ "<!--Favicon-->" | safeHTML }}
+  <link href="{{ `images/icon_apple.png` | absURL }}" rel="apple-touch-icon" sizes="96x96">
+  <link href="{{ `images/icon_16.png` | absURL }}" rel="icon" sizes="16x16" type="image/png">
+  <link href="{{ `images/icon_32.png` | absURL }}" rel="icon" sizes="32x32" type="image/png">
+  <link href="{{ `images/icon_96.png` | absURL }}" rel="icon" sizes="96x96" type="image/png">
+
+</head>

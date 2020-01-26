@@ -1,0 +1,45 @@
+/*!------------------------------------------------------------------
+Mixins
+-------------------------------------------------------------------*/
+
+
+/*!------------------------------------------------------------------
+Breakpoint
+-------------------------------------------------------------------*/
+
+@mixin breakpoint-up($breakpoint: md) {
+  @media #{map-get($breakpoint-min, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($breakpoint: md) {
+  @media #{map-get($breakpoint-max, $breakpoint)} {
+    @content;
+  }
+}
+
+
+/*!------------------------------------------------------------------
+Position
+-------------------------------------------------------------------*/
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}

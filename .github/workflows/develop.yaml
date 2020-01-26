@@ -13,6 +13,13 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: develop
+      - name: Setup hugo
+        run: |
+            wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}-64bit.deb
+            sudo dpkg -i hugo_${HUGO_VERSION}-64bit.deb
+            hugo version
+        env:
+            HUGO_VERSION: '0.60.1'
       - name: setup_nodejs
         uses: actions/setup-node@v1
         with:
@@ -20,8 +27,8 @@ jobs:
       - name: install_dependencies_and_build
         run: |
           npm install
-          npm install -g gatsby-cli
-          gatsby build
+          npm run build
+          hugo
       - name: deploy_to_app_engine
         uses: actions-hub/gcloud@master
         env:

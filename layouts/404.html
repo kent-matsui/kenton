@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<!-- 404 -->
+<div data-barba="container" data-barba-namespace="page">
+  <main class="page">
+
+    <section class="page-container">
+      <div class="page-container__left">
+        <h1 class="page-container__left-heading">404 Not Found</h1>
+      </div>
+
+      <div class="page-container__right">
+        <p>The page you're looking for can't be found.Return to top, or contact me about a problem.</p>
+        <p>Coco Chanel said, &quot;There is no time for cut-and-dried monotony. There is time for work. And time for love. That leaves no other time.&quot; Your time is limited, so don't waste it to stay on the current page.</p>
+        <a class="link" href="{{ .Site.BaseURL }}">Back to top</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+<!-- /404 -->
+
+{{ end }}

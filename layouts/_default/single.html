@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<!-- Works -->
+<div data-barba="container" data-barba-namespace="works">
+  <main class="works">
+
+    <section class="works-single">
+      <div class="works-single__info">
+        <h1 class="works-single__info-heading">{{ .Title }}</h1>
+        <h2 class="works-single__info-subheading">
+          {{ with .Params.categories }}
+          {{ range . }} {{ . }} {{ end }}
+          {{ end }}
+        </h2>
+      </div>
+
+      <article class="works-single__content">
+        {{.Content}}
+      </article>
+
+      <div class="works-single__footer">
+        {{ with .PrevInSection }}
+          <a class="works-single__footer-link is-prev" href="{{ .Permalink }}">
+            <span>{{ .LinkTitle }}</span>
+          </a>
+        {{ end }}
+
+        {{ with .NextInSection }}
+          <a class="works-single__footer-link is-next" href="{{ .Permalink }}">
+            <span>{{ .LinkTitle }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </section>
+
+  </main>
+</div>
+<!-- /Works -->
+
+{{ end }}
